@@ -4,6 +4,7 @@ import Dialer
  from './Dialer';
  import Home from './Home';
  import Footer from './Footer';
+import Offers from './Offers';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
 <Routes>
 <Route path="/" element={<Home />} />
 <Route path="/Dialer" element={<Dialer />} />
+<Route Offers path="/Offers" element={<Offers />} />
 </Routes>
 
 
