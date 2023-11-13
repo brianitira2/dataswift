@@ -55,7 +55,7 @@ const Offers = () => {
 
   return (
     <div className="offers-container">
-      <h1>Mobile Data Offers</h1>
+      <h1 className='offers-h1'>DataSwift  Offers</h1>
       <ul>
         {dataOffers.map((offer) => (
           <li key={offer.id}>

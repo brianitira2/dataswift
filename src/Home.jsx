@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import Footer from './Footer';
 
 import { Link } from 'react-router-dom/dist';
 
@@ -41,6 +42,7 @@ const Home = () => {
         <button className="connect-button">Connect to DataSwift</button>
         </Link>
       </footer>
+      <Footer/>
     </div>
   );
 };

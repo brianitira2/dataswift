@@ -4,7 +4,7 @@ import './Footer.css'; // You can create a separate CSS file for the footer styl
 const Footer = () => {
   return (
     <div className="footer-container">
-      <p>DATASWIFT NETWORK was built by Brian Itira @2023</p>
+      <p className='footer-p'>DATASWIFT NETWORK was built by Brian Itira @2023</p>
     </div>
   );
 }

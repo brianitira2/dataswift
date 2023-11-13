@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Dialer.css';
+import Footer from './Footer';
 
 const Dialer = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -8,7 +9,13 @@ const Dialer = () => {
   const [sendButtonClicked, setSendButtonClicked] = useState(false);
 
   const handleButtonClick = (number) => {
-    setPhoneNumber((prevNumber) => prevNumber + number);
+    if (number === '*' && phoneNumber.length > 0) {
+      // Delete the last digit
+      setPhoneNumber((prevNumber) => prevNumber.slice(0, -1));
+    } else {
+      // Append the entered number
+      setPhoneNumber((prevNumber) => prevNumber + number);
+    }
   };
 
   const handleSendButtonClick = () => {
@@ -21,6 +28,10 @@ const Dialer = () => {
       setPhoneNumber('');
       setSendButtonClicked(true);
     }
+  };
+
+  const handleClearButtonClick = () => {
+    setPhoneNumber('');
   };
 
   useEffect(() => {
@@ -52,6 +63,9 @@ const Dialer = () => {
             {number}
           </button>
         ))}
+        <button className="clear-button" onClick={handleClearButtonClick}>
+          Clear
+        </button>
       </div>
 
       <button className="send-button" onClick={handleSendButtonClick}>
@@ -65,6 +79,8 @@ const Dialer = () => {
       )}
 
       {isLoading && <div className="loader">DataSwift is processing your request...</div>}
+
+      <Footer/>
     </div>
   );
 };
